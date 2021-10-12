@@ -139,33 +139,27 @@ const MapScreen = () => {
                         <View style={{
                             // width: 80,
                             // height: 80,
+                            // backgroundColor: '#fff'
                         }}>
-                            {/* <View style={{ backgroundColor: '#fff' }}>
-                                <VictoryPie
-                                    padAngle={({ datum }) => datum.y}
-                                    innerRadius={100}
-                                    data={[
-                                        { x: 1, y: 2 },
-                                        { x: 2, y: 3, label: "two" },
-                                        { x: 3, y: 5 }
-                                    ]}
-                                    />
-                            </View>
-                            <View style={{ position: 'absolute', top: 30, left: 30}}>
-                                <Text style={{
-                                    color: 'red'
-                                }}>{points}</Text>
-                            </View> */}
+
                             <VictoryPie
                                 colorScale={['red', 'green', 'yellow']}
                                 padAngle={({ datum }) => datum.y}
-                                innerRadius={100}
+                                radius={30}
+                                innerRadius={20}
                                 data={[
                                     { x: 1, y: 2 },
                                     { x: 2, y: 3, label: "two" },
                                     { x: 3, y: 3 }
                                 ]}
                             />
+                            <View style={{ position: 'absolute', bottom: 100, left: 175, top: 170 }}>
+                                <Text style={{
+                                    color: 'red',
+
+                                }}>{points}</Text>
+                            </View>
+
                         </View>
                     </Marker>
 
