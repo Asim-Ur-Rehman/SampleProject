@@ -6,20 +6,24 @@ import Pie from 'react-native-pie';
 const pie = () => {
     return (
 
+
+
+
+
+
         <View style={{
             // backgroundColor: 'green',
-            // flex: 1,
             width: 80,
             height: 80,
-            alignItems: 'center',
-            justifyContent: 'center',
-            alignSelf: 'center',
+            // alignItems: 'center',
+            // justifyContent: 'center',
 
         }}>
 
-            <View style={{ backgroundColor: 'white', }}>
-                <Pie
+            <View style={{ backgroundColor: 'black', }}>
 
+                {/* <Image source={require('../assets/Pie.png')} style={{ width: 80, height: 80, }} /> */}
+                <Pie
                     radius={40}
                     innerRadius={30}
                     sections={[
@@ -40,20 +44,20 @@ const pie = () => {
                             color: 'green',
                         },
                     ]}
-                    strokeCap={'butt'}
                 />
+
+
             </View>
-            <View style={{ position: 'absolute', }}>
+            {/* <View style={{ position: 'absolute', }}>
                 <Text style={{
                     color: 'red'
-                }}>10</Text>
-            </View>
+                }}>{points}</Text>
+            </View> */}
 
 
 
 
         </View>
-
 
     )
 }
