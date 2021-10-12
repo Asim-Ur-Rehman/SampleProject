@@ -9,12 +9,12 @@ import {
     TextInput,
     useColorScheme,
     View,
-    Image
+    Image,
+    ImageBackground
 } from 'react-native';
 import MapView from "react-native-map-clustering";
 import { Marker } from "react-native-maps";
 import Pie from 'react-native-pie';
-import PieScreen from '../screens/pie'
 
 const MapScreen = () => {
 
@@ -27,6 +27,90 @@ const MapScreen = () => {
         longitudeDelta: 8.5,
     };
 
+
+    const allMarkers = [
+        {
+            latitude: 52.0,
+            longitude: 18.2,
+            title: 'User1',
+            description: 'HelloUser1',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 52.2,
+            longitude: 18.2,
+            title: 'User2',
+            description: 'HelloUser2',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 52.6,
+            longitude: 18.3,
+            title: 'User3',
+            description: 'HelloUser3',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 51.6,
+            longitude: 18.0,
+            title: 'User4',
+            description: 'HelloUser4',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 53.1,
+            longitude: 18.8,
+            title: 'User5',
+            description: 'HelloUser5',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 52.9,
+            longitude: 19.4,
+            title: 'User6',
+            description: 'HelloUser6',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 52.2,
+            longitude: 21,
+            title: 'User7',
+            description: 'HelloUser7',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 52.4,
+            longitude: 21,
+            title: 'User8',
+            description: 'HelloUser8',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 51.8,
+            longitude: 20,
+            title: 'User9',
+            description: 'HelloUser9',
+            image: require('../assets/user.png'),
+
+        },
+        {
+            latitude: 54.8,
+            longitude: 22,
+            title: 'User10',
+            description: 'HelloUser10',
+            image: require('../assets/user.png'),
+
+        },
+    ]
+
     return (
 
 
@@ -35,7 +119,7 @@ const MapScreen = () => {
 
         <MapView
             initialRegion={INITIAL_REGION}
-            style={{ flex: 1, }}
+            style={{ flex: 1 }}
 
             // clusterColor='red'
             // onClusterPress={() => alert('helo')}
@@ -59,16 +143,15 @@ const MapScreen = () => {
                             // backgroundColor: 'green',
                             width: 80,
                             height: 80,
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            // alignItems: 'center',
+                            // justifyContent: 'center',
 
                         }}>
 
-                            <View style={{ backgroundColor: 'white', }}>
+                            <View style={{ backgroundColor: 'black' }}>
 
-                                <Image source={require('../assets/Pie.png')} style={{ width: 80, height: 80, }} />
-                                {/* <Pie
-
+                                {/* <Image source={require('../assets/Pie.png')} style={{ width: 80, height: 80, }} /> */}
+                                <Pie
                                     radius={40}
                                     innerRadius={30}
                                     sections={[
@@ -89,15 +172,15 @@ const MapScreen = () => {
                                             color: 'green',
                                         },
                                     ]}
-                                /> */}
+                                />
 
 
                             </View>
-                            <View style={{ position: 'absolute', }}>
+                            {/* <View style={{ position: 'absolute', }}>
                                 <Text style={{
                                     color: 'red'
                                 }}>{points}</Text>
-                            </View>
+                            </View> */}
 
 
 
@@ -114,53 +197,25 @@ const MapScreen = () => {
             }}
 
         >
-            <Marker coordinate={{ latitude: 52.0, longitude: 18.2 }} title={'User1'} description={'Hello User1'} >
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-            <Marker coordinate={{ latitude: 52.2, longitude: 18.3 }} title={'User2'} description={'Hello User2'} >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-            <Marker coordinate={{ latitude: 52.6, longitude: 18.3 }} title={'User3'} description={'Hello User3'} >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-            <Marker coordinate={{ latitude: 51.6, longitude: 18.0 }} title={'User4'} description={'Hello User4'} >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-            <Marker coordinate={{ latitude: 53.1, longitude: 18.8 }} title={'User5'} description={'Hello User5'} >
 
 
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-            <Marker coordinate={{ latitude: 52.9, longitude: 19.4 }} title={'User6'} description={'Hello User6'} >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-            <Marker coordinate={{ latitude: 52.2, longitude: 21 }} title={'User7'} description={'Hello User7'} >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-
-            </Marker>
-            <Marker coordinate={{ latitude: 52.4, longitude: 21 }} title={'User8'} description={'Hello User8'} >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-
-            </Marker>
-            <Marker coordinate={{ latitude: 51.8, longitude: 20 }} title={'User9'} description={'Hello User9'} >
+            {
+                allMarkers.map((item, i) => {
+                    return (
+                        <Marker key={i} coordinate={{ latitude: item.latitude, longitude: item.longitude }} title={item.title} description={item.description} >
+                            <Image source={item.image} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
+                        </Marker>
+                    )
+                })
+            }
 
 
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
-
-
-            <Marker coordinate={{ latitude: 54.8, longitude: 22 }} title={'User10'} description={'Hello User10'}  >
-
-                <Image source={require('../assets/user.png')} style={{ width: 50, height: 50 }} resizeMode={'contain'} />
-            </Marker>
 
         </MapView>
+
+
+
+
 
     )
 }
