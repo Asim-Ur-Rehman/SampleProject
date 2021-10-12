@@ -15,7 +15,7 @@ import {
 import MapView from "react-native-map-clustering";
 import { Marker } from "react-native-maps";
 import Pie from 'react-native-pie';
-
+import { VictoryPie } from 'victory-native'
 const MapScreen = () => {
 
 
@@ -120,7 +120,6 @@ const MapScreen = () => {
         <MapView
             initialRegion={INITIAL_REGION}
             style={{ flex: 1 }}
-
             // clusterColor='red'
             // onClusterPress={() => alert('helo')}
             renderCluster={cluster => {
@@ -128,7 +127,6 @@ const MapScreen = () => {
                 // console.log('cluster data', cluster)
                 const points = properties.point_count;
                 return (
-
                     <Marker
                         key={`cluster-${id}`}
                         coordinate={{
@@ -138,59 +136,37 @@ const MapScreen = () => {
                         onPress={onPress}
 
                     >
-
                         <View style={{
-                            // backgroundColor: 'green',
-                            width: 80,
-                            height: 80,
-                            // alignItems: 'center',
-                            // justifyContent: 'center',
-
+                            // width: 80,
+                            // height: 80,
                         }}>
-
-                            <View style={{ backgroundColor: 'black' }}>
-
-                                {/* <Image source={require('../assets/Pie.png')} style={{ width: 80, height: 80, }} /> */}
-                                <Pie
-                                    radius={40}
-                                    innerRadius={30}
-                                    sections={[
-                                        {
-                                            percentage: 60,
-                                            color: 'red',
-                                        },
-                                        {
-                                            percentage: 20,
-                                            color: 'blue',
-                                        },
-                                        {
-                                            percentage: 10,
-                                            color: 'yellow',
-                                        },
-                                        {
-                                            percentage: 10,
-                                            color: 'green',
-                                        },
+                            {/* <View style={{ backgroundColor: '#fff' }}>
+                                <VictoryPie
+                                    padAngle={({ datum }) => datum.y}
+                                    innerRadius={100}
+                                    data={[
+                                        { x: 1, y: 2 },
+                                        { x: 2, y: 3, label: "two" },
+                                        { x: 3, y: 5 }
                                     ]}
-                                />
-
-
+                                    />
                             </View>
-                            {/* <View style={{ position: 'absolute', }}>
+                            <View style={{ position: 'absolute', top: 30, left: 30}}>
                                 <Text style={{
                                     color: 'red'
                                 }}>{points}</Text>
                             </View> */}
-
-
-
-
+                            <VictoryPie
+                                colorScale={['red', 'green', 'yellow']}
+                                padAngle={({ datum }) => datum.y}
+                                innerRadius={100}
+                                data={[
+                                    { x: 1, y: 2 },
+                                    { x: 2, y: 3, label: "two" },
+                                    { x: 3, y: 3 }
+                                ]}
+                            />
                         </View>
-
-                        {/* <View style={{ padding: 16, backgroundColor: "white", backgroundColor: cluster.clusterColor }}>
-                            <Text>{points}</Text>
-                        </View> */}
-
                     </Marker>
 
                 );

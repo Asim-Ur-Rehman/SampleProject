@@ -16,7 +16,9 @@
     "react-native-map-clustering": "^3.4.2",
     "react-native-maps": "^0.29.3",
     "react-native-pie": "^1.1.2",
-    "react-native-pie-chart": "^2.0.2"
+    "react-native-pie-chart": "^2.0.2",
+    "react-native-svg": "^12.1.1",
+    "victory-native": "^35.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
