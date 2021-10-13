@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 import Pie from 'react-native-pie';
 import MapScreen from './src/screens/MapScreen';
+import Circle from './src/screens/circle';
 import { VictoryPie } from 'victory-native'
 
 
@@ -28,43 +29,44 @@ const App = () => {
     // <View style={{ flex: 1 }}>
     //   <PieScreen />
     // </View>
-  // <View style={{height: 50, width: 50, backgroundColor: 'red'}}>
-  //     <VictoryPie
-  //       padAngle={({ datum }) => datum.y}
-  //       innerRadius={100}
-  //       data={[
-  //         { x: 1, y: 2 },
-  //         { x: 2, y: 3, label: "two" },
-  //         { x: 3, y: 5 }
-  //       ]}
-  //       padding={10}
-  //     />
-  // </View>
-    <MapScreen />
-  //   <Pie
-  //   dividerSize={20}
-  //   strokeCap="butt"
-  //     radius={40}
-  //     innerRadius={30}
-  //     sections={[
-  //         {
-  //             percentage: 60,
-  //             color: 'red',
-  //         },
-  //         {
-  //             percentage: 20,
-  //             color: 'blue',
-  //         },
-  //         {
-  //             percentage: 10,
-  //             color: 'yellow',
-  //         },
-  //         {
-  //             percentage: 10, 
-  //             color: 'green',
-  //         },
-  //     ]}
-  // />
+    // <View style={{height: 50, width: 50, backgroundColor: 'red'}}>
+    //     <VictoryPie
+    //       padAngle={({ datum }) => datum.y}
+    //       innerRadius={100}
+    //       data={[
+    //         { x: 1, y: 2 },
+    //         { x: 2, y: 3, label: "two" },
+    //         { x: 3, y: 5 }
+    //       ]}
+    //       padding={10}
+    //     />
+    // </View>
+    // <MapScreen />
+    <Circle />
+    //   <Pie
+    //   dividerSize={20}
+    //   strokeCap="butt"
+    //     radius={40}
+    //     innerRadius={30}
+    //     sections={[
+    //         {
+    //             percentage: 60,
+    //             color: 'red',
+    //         },
+    //         {
+    //             percentage: 20,
+    //             color: 'blue',
+    //         },
+    //         {
+    //             percentage: 10,
+    //             color: 'yellow',
+    //         },
+    //         {
+    //             percentage: 10,
+    //             color: 'green',
+    //         },
+    //     ]}
+    // />
     // <PieScreen />
   );
 };

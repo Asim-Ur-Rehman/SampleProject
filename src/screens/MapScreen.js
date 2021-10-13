@@ -33,7 +33,7 @@ const MapScreen = () => {
             latitude: 52.0,
             longitude: 18.2,
             title: 'User1',
-            description: 'HelloUser1',
+            description: 'Hello User1',
             image: require('../assets/user.png'),
 
         },
@@ -41,7 +41,7 @@ const MapScreen = () => {
             latitude: 52.2,
             longitude: 18.2,
             title: 'User2',
-            description: 'HelloUser2',
+            description: 'Hello User2',
             image: require('../assets/user.png'),
 
         },
@@ -49,7 +49,7 @@ const MapScreen = () => {
             latitude: 52.6,
             longitude: 18.3,
             title: 'User3',
-            description: 'HelloUser3',
+            description: 'Hello User3',
             image: require('../assets/user.png'),
 
         },
@@ -57,7 +57,7 @@ const MapScreen = () => {
             latitude: 51.6,
             longitude: 18.0,
             title: 'User4',
-            description: 'HelloUser4',
+            description: 'Hello User4',
             image: require('../assets/user.png'),
 
         },
@@ -65,7 +65,7 @@ const MapScreen = () => {
             latitude: 53.1,
             longitude: 18.8,
             title: 'User5',
-            description: 'HelloUser5',
+            description: 'Hello User5',
             image: require('../assets/user.png'),
 
         },
@@ -73,7 +73,7 @@ const MapScreen = () => {
             latitude: 52.9,
             longitude: 19.4,
             title: 'User6',
-            description: 'HelloUser6',
+            description: 'Hello User6',
             image: require('../assets/user.png'),
 
         },
@@ -81,7 +81,7 @@ const MapScreen = () => {
             latitude: 52.2,
             longitude: 21,
             title: 'User7',
-            description: 'HelloUser7',
+            description: 'Hello User7',
             image: require('../assets/user.png'),
 
         },
@@ -89,7 +89,7 @@ const MapScreen = () => {
             latitude: 52.4,
             longitude: 21,
             title: 'User8',
-            description: 'HelloUser8',
+            description: 'Hello User8',
             image: require('../assets/user.png'),
 
         },
@@ -97,7 +97,7 @@ const MapScreen = () => {
             latitude: 51.8,
             longitude: 20,
             title: 'User9',
-            description: 'HelloUser9',
+            description: 'Hello User9',
             image: require('../assets/user.png'),
 
         },
@@ -105,18 +105,13 @@ const MapScreen = () => {
             latitude: 54.8,
             longitude: 22,
             title: 'User10',
-            description: 'HelloUser10',
+            description: 'Hello User10',
             image: require('../assets/user.png'),
 
         },
     ]
 
     return (
-
-
-
-
-
         <MapView
             initialRegion={INITIAL_REGION}
             style={{ flex: 1 }}
@@ -133,27 +128,22 @@ const MapScreen = () => {
                             longitude: geometry.coordinates[0],
                             latitude: geometry.coordinates[1]
                         }}
-                        onPress={onPress}
-
-                    >
-                        <View style={{
-                            // width: 80,
-                            // height: 80,
-                            // backgroundColor: '#fff'
-                        }}>
-
+                        onPress={onPress}>
+                        <View>
                             <VictoryPie
+                                // style={{ labels: { fill: "white", fontSize: 20, fontWeight: "bold" } }}
                                 colorScale={['red', 'green', 'yellow']}
                                 padAngle={({ datum }) => datum.y}
                                 radius={30}
                                 innerRadius={20}
                                 data={[
-                                    { x: 1, y: 2 },
-                                    { x: 2, y: 3, label: "two" },
+                                    { x: 1, y: 2, },
+                                    { x: 2, y: 3, },
                                     { x: 3, y: 3 }
                                 ]}
+
                             />
-                            <View style={{ position: 'absolute', bottom: 100, left: 175, top: 170 }}>
+                            <View style={{ position: 'absolute', bottom: 100, left: 172, top: 170 }}>
                                 <Text style={{
                                     color: 'red',
 
